@@ -1,0 +1,18 @@
+* {
+    font-family: "Lexend Deca", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+html, body, main, wahoo-game {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.row {
+    display: flex;
+    width: 100%;
+}
