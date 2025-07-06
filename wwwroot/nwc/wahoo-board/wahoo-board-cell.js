@@ -65,11 +65,34 @@
             height: 70%;
             width: 70%;
         }
-        wahoo-board-cell[is-queue][color="blue"]{
-            background: radial-gradient(circle, rgba(30, 84, 159, 1) 142%, rgba(95, 71, 53, 1) 100%);
+        wahoo-board-cell[is-home][color="blue"][coordinate="HB3"] {
+            background: linear-gradient(45deg, #70543c, #589eff, #70543c, #70543c);
+            background-size: 400% 400%;
+            animation: gradient 5s ease infinite;
         }
-        wahoo-board-cell[color="red"] .cell-circle {
-            background: red;
+        wahoo-board-cell[is-home][color="blue"][coordinate="HB2"] {
+            background: linear-gradient(45deg, #70543c, #589eff, #70543c, #70543c);
+            background-size: 400% 400%;
+            animation: gradient 5s ease infinite;
+        }
+        wahoo-board-cell[is-home][color="blue"][coordinate="HB1"] {
+            background: linear-gradient(45deg, #70543c, #589eff, #70543c, #70543c);
+            background-size: 400% 400%;
+            animation: gradient 5s ease infinite;
+        }
+        wahoo-board-cell[is-home][color="blue"][coordinate="HB0"] {
+            background: linear-gradient(45deg, #70543c, #589eff, #70543c, #70543c);
+            background-size: 400% 400%;
+            animation: gradient 5s ease infinite;
+        }
+        wahoo-board-cell[is-home][color="red"]{
+            background: rgba(30, 84, 159, 1);
+        }
+        wahoo-board-cell[is-home][color="green"]{
+            background: rgba(30, 84, 159, 1);
+        }
+        wahoo-board-cell[is-home][color="yellow"]{
+            background: rgba(30, 84, 159, 1);
         }
         wahoo-board-cell:not([isPlayable]) .cell-circle:not([is-queue]) .cell-circle {
             display: none;
@@ -81,6 +104,17 @@
             align-items: center;
             height: 100%;
             width: 100%;
+        }
+        @keyframes gradient {
+        	0% {
+        		background-position: 0% 50%;
+        	}
+        	50% {
+        		background-position: 100% 50%;
+        	}
+        	100% {
+        		background-position: 0% 50%;
+        	}
         }
       </style>
       <div id="wahoo-board-cell">
@@ -212,7 +246,7 @@
         case '15':
             if (cn === '5') { this.setAttribute('coordinate', 'QR3'); this.setAttribute('color', 'red'); this.setAttribute('is-queue', ''); return; }
             if (cn === '15') { this.setAttribute('coordinate', 'QB3');  this.setAttribute('color', 'blue'); this.setAttribute('is-queue', ''); return; }
-            if (cn === '10') { this.setAttribute('coordinate', 'Hb3');  this.setAttribute('color', 'blue'); this.setAttribute('is-home', ''); this.setAttribute('isPlayable', ''); return; }
+            if (cn === '10') { this.setAttribute('coordinate', 'HB3');  this.setAttribute('color', 'blue'); this.setAttribute('is-home', ''); this.setAttribute('isPlayable', ''); return; }
             
             if (cn === '7') { this.setAttribute('coordinate', 'A4'); this.setAttribute('isPlayable', ''); return; }
             if (cn === '13') { this.setAttribute('coordinate', 'D8'); this.setAttribute('isPlayable', ''); return; }

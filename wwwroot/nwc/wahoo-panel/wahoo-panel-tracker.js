@@ -18,7 +18,6 @@
           width: 100%;
         }
         #wahoo-panel-tracker {
-          background: black;
           display: flex;
           flex-direction: column;
           height: 100%;

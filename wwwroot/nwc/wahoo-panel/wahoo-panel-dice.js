@@ -18,7 +18,6 @@
           width: 100%;
         }
         #wahoo-panel-dice {
-          background: black;
           display: flex;
           flex-direction: column;
           height: 100%;
@@ -159,8 +158,7 @@
 
   rollDice() {
     const dice = this.querySelector('.dice');
-    //const roll = Math.floor((Math.random() * 6) + 1);
-    const roll = Math.floor(Math.random() * (6 - 1 + 1) + 1);
+    const roll = Math.floor((Math.random() * 6) + 1);
     
     console.log(roll);
 

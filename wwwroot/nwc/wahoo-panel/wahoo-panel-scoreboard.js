@@ -18,7 +18,6 @@
           width: 100%;
         }
         #wahoo-panel-scoreboard {
-          background: black;
           display: flex;
           flex-direction: column;
           height: 100%;
