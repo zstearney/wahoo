@@ -43,19 +43,19 @@
     this.innerHTML = `
       <style>
         wahoo-board-cell {
-          height: 100%;
-          width: 100%;
+            height: 100%;
+            width: 100%;
         }
         #wahoo-board-cell {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          height: 100%;
-          width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 100%;
         }
         wahoo-board-cell[isPlayable],
         wahoo-board-cell[is-queue] {
-          background: #70543c;
+            background: #70543c;
         }
         wahoo-board-cell[isPlayable] .cell-circle,
         wahoo-board-cell[is-queue] .cell-circle {
@@ -65,19 +65,22 @@
             height: 70%;
             width: 70%;
         }
-        wahoo-board-cell[color="red"] .cell-circle {
-          background: red;
+        wahoo-board-cell[is-queue][color="blue"]{
+            background: radial-gradient(circle, rgba(30, 84, 159, 1) 142%, rgba(95, 71, 53, 1) 100%);
         }
-        wahoo-board-cell:not([isPlayable]) .cell-circle {
+        wahoo-board-cell[color="red"] .cell-circle {
+            background: red;
+        }
+        wahoo-board-cell:not([isPlayable]) .cell-circle:not([is-queue]) .cell-circle {
             display: none;
         }
         wahoo-board-cell {
-          border: 1px solid #5f4735;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          height: 100%;
-          width: 100%;
+            border: 1px solid #5f4735;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
         }
       </style>
       <div id="wahoo-board-cell">
@@ -91,14 +94,9 @@
   updateCellProps() {
     const rn = this.rowNum
     const cn = this.colNum
-    console.log('updateCellProps: ', rn + ' - ' + cn)
 
     switch (rn) {
         case '1':
-            console.log('this: ', this)
-            if (cn === '1') { this.setAttribute('coordinate', 'QG0'); this.setAttribute('color', 'green'); this.setAttribute('is-queue', ''); return; }
-            if (cn === '19') { this.setAttribute('coordinate', 'QY0');  this.setAttribute('color', 'yellow'); this.setAttribute('is-queue', ''); return; }
-            
             if (cn === '7') { this.setAttribute('coordinate', 'B12'); this.setAttribute('isPlayable', ''); return; }
             if (cn === '8') { this.setAttribute('coordinate', 'B13'); this.setAttribute('isPlayable', ''); return; }
             if (cn === '9') { this.setAttribute('coordinate', 'B14'); this.setAttribute('isPlayable', ''); return; }
@@ -108,30 +106,32 @@
             if (cn === '13') { this.setAttribute('coordinate', 'C0'); this.setAttribute('isPlayable', ''); return; }
             break;
         case '2':
-            if (cn === '2') { this.setAttribute('coordinate', 'QG1'); this.setAttribute('color', 'green'); this.setAttribute('is-queue', ''); return; }
-            if (cn === '18') { this.setAttribute('coordinate', 'QY1');  this.setAttribute('color', 'yellow'); this.setAttribute('is-queue', ''); return; }
+            if (cn === '2') { this.setAttribute('coordinate', 'QG0'); this.setAttribute('color', 'green'); this.setAttribute('is-queue', ''); return; }
+            if (cn === '18') { this.setAttribute('coordinate', 'QY0');  this.setAttribute('color', 'yellow'); this.setAttribute('is-queue', ''); return; }
             if (cn === '10') { this.setAttribute('coordinate', 'HG0');  this.setAttribute('color', 'green'); this.setAttribute('is-home', ''); this.setAttribute('isPlayable', ''); return; }
 
             if (cn === '7') { this.setAttribute('coordinate', 'B11'); this.setAttribute('isPlayable', ''); return; }
             if (cn === '13') { this.setAttribute('coordinate', 'C1'); this.setAttribute('isPlayable', ''); return; }
             break;
         case '3':
-            if (cn === '3') { this.setAttribute('coordinate', 'QG2'); this.setAttribute('color', 'green'); this.setAttribute('is-queue', ''); return; }
-            if (cn === '17') { this.setAttribute('coordinate', 'QY2');  this.setAttribute('color', 'yellow'); this.setAttribute('is-queue', ''); return; }
+            if (cn === '3') { this.setAttribute('coordinate', 'QG1'); this.setAttribute('color', 'green'); this.setAttribute('is-queue', ''); return; }
+            if (cn === '17') { this.setAttribute('coordinate', 'QY1');  this.setAttribute('color', 'yellow'); this.setAttribute('is-queue', ''); return; }
             if (cn === '10') { this.setAttribute('coordinate', 'HG1');  this.setAttribute('color', 'green'); this.setAttribute('is-home', ''); this.setAttribute('isPlayable', ''); return; }
 
             if (cn === '7') { this.setAttribute('coordinate', 'B10'); this.setAttribute('isPlayable', ''); return; }
             if (cn === '13') { this.setAttribute('coordinate', 'C2'); this.setAttribute('isPlayable', ''); return; }
             break;
         case '4':
-            if (cn === '4') { this.setAttribute('coordinate', 'QG3'); this.setAttribute('color', 'green'); this.setAttribute('is-queue', ''); return; }
-            if (cn === '16') { this.setAttribute('coordinate', 'QY3');  this.setAttribute('color', 'yellow'); this.setAttribute('is-queue', ''); return; }
+            if (cn === '4') { this.setAttribute('coordinate', 'QG2'); this.setAttribute('color', 'green'); this.setAttribute('is-queue', ''); return; }
+            if (cn === '16') { this.setAttribute('coordinate', 'QY2');  this.setAttribute('color', 'yellow'); this.setAttribute('is-queue', ''); return; }
             if (cn === '10') { this.setAttribute('coordinate', 'HG2');  this.setAttribute('color', 'green'); this.setAttribute('is-home', ''); this.setAttribute('isPlayable', ''); return; }
 
             if (cn === '7') { this.setAttribute('coordinate', 'B9'); this.setAttribute('isPlayable', ''); return; }
             if (cn === '13') { this.setAttribute('coordinate', 'C3'); this.setAttribute('isPlayable', ''); return; }
             break;
         case '5':
+            if (cn === '5') { this.setAttribute('coordinate', 'QG3'); this.setAttribute('color', 'green'); this.setAttribute('is-queue', ''); return; }
+            if (cn === '15') { this.setAttribute('coordinate', 'QY3');  this.setAttribute('color', 'yellow'); this.setAttribute('is-queue', ''); return; }
             if (cn === '10') { this.setAttribute('coordinate', 'HG3');  this.setAttribute('color', 'green'); this.setAttribute('is-home', ''); this.setAttribute('isPlayable', ''); return; }
 
             if (cn === '7') { this.setAttribute('coordinate', 'B8'); this.setAttribute('isPlayable', ''); return; }
@@ -210,39 +210,38 @@
             if (cn === '13') { this.setAttribute('coordinate', 'D7'); this.setAttribute('isPlayable', ''); return; }
             break;
         case '15':
+            if (cn === '5') { this.setAttribute('coordinate', 'QR3'); this.setAttribute('color', 'red'); this.setAttribute('is-queue', ''); return; }
+            if (cn === '15') { this.setAttribute('coordinate', 'QB3');  this.setAttribute('color', 'blue'); this.setAttribute('is-queue', ''); return; }
             if (cn === '10') { this.setAttribute('coordinate', 'Hb3');  this.setAttribute('color', 'blue'); this.setAttribute('is-home', ''); this.setAttribute('isPlayable', ''); return; }
             
             if (cn === '7') { this.setAttribute('coordinate', 'A4'); this.setAttribute('isPlayable', ''); return; }
             if (cn === '13') { this.setAttribute('coordinate', 'D8'); this.setAttribute('isPlayable', ''); return; }
             break;
         case '16':
-            if (cn === '4') { this.setAttribute('coordinate', 'QR3'); this.setAttribute('color', 'red'); this.setAttribute('is-queue', ''); return; }
-            if (cn === '16') { this.setAttribute('coordinate', 'QB3');  this.setAttribute('color', 'blue'); this.setAttribute('is-queue', ''); return; }
+            if (cn === '4') { this.setAttribute('coordinate', 'QR2'); this.setAttribute('color', 'red'); this.setAttribute('is-queue', ''); return; }
+            if (cn === '16') { this.setAttribute('coordinate', 'QB2');  this.setAttribute('color', 'blue'); this.setAttribute('is-queue', ''); return; }
             if (cn === '10') { this.setAttribute('coordinate', 'HB2');  this.setAttribute('color', 'blue'); this.setAttribute('is-home', ''); this.setAttribute('isPlayable', ''); return; }
 
             if (cn === '7') { this.setAttribute('coordinate', 'A3'); this.setAttribute('isPlayable', ''); return; }
             if (cn === '13') { this.setAttribute('coordinate', 'D9'); this.setAttribute('isPlayable', ''); return; }
             break;
         case '17':
-            if (cn === '3') { this.setAttribute('coordinate', 'QR2'); this.setAttribute('color', 'red'); this.setAttribute('is-queue', ''); return; }
-            if (cn === '17') { this.setAttribute('coordinate', 'QB2');  this.setAttribute('color', 'blue'); this.setAttribute('is-queue', ''); return; }
+            if (cn === '3') { this.setAttribute('coordinate', 'QR1'); this.setAttribute('color', 'red'); this.setAttribute('is-queue', ''); return; }
+            if (cn === '17') { this.setAttribute('coordinate', 'QB1');  this.setAttribute('color', 'blue'); this.setAttribute('is-queue', ''); return; }
             if (cn === '10') { this.setAttribute('coordinate', 'HB1');  this.setAttribute('color', 'blue'); this.setAttribute('is-home', ''); this.setAttribute('isPlayable', ''); return; }
 
             if (cn === '7') { this.setAttribute('coordinate', 'A2'); this.setAttribute('isPlayable', ''); return; }
             if (cn === '13') { this.setAttribute('coordinate', 'D10'); this.setAttribute('isPlayable', ''); return; }
             break;
         case '18':
-            if (cn === '2') { this.setAttribute('coordinate', 'QR1'); this.setAttribute('color', 'red'); this.setAttribute('is-queue', ''); return; }
-            if (cn === '18') { this.setAttribute('coordinate', 'QB1');  this.setAttribute('color', 'blue'); this.setAttribute('is-queue', ''); return; }
+            if (cn === '2') { this.setAttribute('coordinate', 'QR0'); this.setAttribute('color', 'red'); this.setAttribute('is-queue', ''); return; }
+            if (cn === '18') { this.setAttribute('coordinate', 'QB0');  this.setAttribute('color', 'blue'); this.setAttribute('is-queue', ''); return; }
             if (cn === '10') { this.setAttribute('coordinate', 'HB0');  this.setAttribute('color', 'blue'); this.setAttribute('is-home', ''); this.setAttribute('isPlayable', ''); return; }
 
             if (cn === '7') { this.setAttribute('coordinate', 'A1'); this.setAttribute('isPlayable', ''); return; }
             if (cn === '13') { this.setAttribute('coordinate', 'D11'); this.setAttribute('isPlayable', ''); return; }
             break;
         case '19':
-            if (cn === '1') { this.setAttribute('coordinate', 'QR0'); this.setAttribute('color', 'red'); this.setAttribute('is-queue', ''); return; }
-            if (cn === '19') { this.setAttribute('coordinate', 'QB0');  this.setAttribute('color', 'blue'); this.setAttribute('is-queue', ''); return; }
-
             if (cn === '7') { this.setAttribute('coordinate', 'A0'); this.setAttribute('isPlayable', ''); return; }
             if (cn === '8') { this.setAttribute('coordinate', 'D17'); this.setAttribute('isPlayable', ''); return; }
             if (cn === '9') { this.setAttribute('coordinate', 'D16'); this.setAttribute('isPlayable', ''); return; }

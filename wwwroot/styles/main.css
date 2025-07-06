@@ -2,6 +2,16 @@
     font-family: "Lexend Deca", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
+    /* font-family: "Silkscreen", sans-serif;
+    font-weight: 400;
+    font-style: normal; */
+
+.silkscreen-bold {
+  font-family: "Silkscreen", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
 }
 
 html, body, main, wahoo-game {
@@ -12,7 +22,27 @@ html, body, main, wahoo-game {
     width: 100%;
 }
 
+main {
+    background: #24252a;
+}
+
 .row {
     display: flex;
     width: 100%;
+}
+
+.purple-txt {
+  color: #938bff;
+}
+.blue-txt {
+  color: #589eff;
+}
+.red-txt {
+  color: #ff6e76;
+}
+.green-txt {
+  color: #00c8a1;
+}
+.yellow-txt {
+  color: #d69605;
 }

@@ -43,7 +43,6 @@
         <wahoo-board-row row-num="19"></wahoo-board-row>
       </div>
     `
-    //document.addEventListener('DOMContentLoaded', () => { this.updateApp() })
   }
 }
 customElements.define("wahoo-board", WahooBoard);

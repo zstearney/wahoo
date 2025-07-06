@@ -1,4 +1,5 @@
 import "./main.js";
+import "./nwc/event-bus/event-bus.js"
 import "./nwc/main-menu/main-menu.js";
 import "./nwc/my-button/my-button.js";
 import "./nwc/my-slider/my-slider.js";
@@ -6,3 +7,7 @@ import "./nwc/wahoo-game/wahoo-game.js";
 import "./nwc/wahoo-board/wahoo-board.js";
 import "./nwc/wahoo-board/wahoo-board-row.js";
 import "./nwc/wahoo-board/wahoo-board-cell.js";
+import "./nwc/wahoo-panel/wahoo-panel.js";
+import "./nwc/wahoo-panel/wahoo-panel-dice.js";
+import "./nwc/wahoo-panel/wahoo-panel-tracker.js";
+import "./nwc/wahoo-panel/wahoo-panel-scoreboard.js";

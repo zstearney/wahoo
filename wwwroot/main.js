@@ -3,20 +3,23 @@
     super();
   }
 
-    get eventBus() {
+  get eventBus() {
     return document.querySelector('#event-bus')
   }
 
   connectedCallback() {
     this.render()
-    this.addListeners(this.eventBus)
+    setTimeout(() => { this.addListeners(this.eventBus) })
   }
 
   disconnectedCallback() {
   }
 
   addListeners(bus) {
-    bus.addEventListener('send_start_game_event', ({detail}) => { this.startgame(detail) })
+    bus.addEventListener('send_start_game_event', ({detail}) => { 
+      this.eventBus.gamedata = detail
+      this.startgame() 
+    })
   }
 
   render() {
@@ -26,26 +29,21 @@
           height: 100%;
           width: 100%;
         }
-        #site section {
+        #site .site-section {
           position: absolute;
           right: 0;
           left: 0;
         }
         #site .site-title {
-          height: 30px;
+          height: 36px;
           top: 0;
         }
         #site .site-content {
           background: #24252a;
-          padding: 18px;
-          top: 30px;
-          bottom: 80px;
+          margin: 0 18px 18px 18px;
+          top: 36px;
+          bottom: 0;
           overflow: hidden;
-        }
-        #site .site-footer {
-          background-color: #24252a;
-          height: 80px;
-          bottom: 0px;
         }
         #site .site-title div {
           align-items: center;
@@ -57,21 +55,20 @@
           justify-content: center;
         }
       </style>
-      <div id="event-bus" hidden></div>
+      <event-bus></event-bus>
       <div id="site">
-        <section class="site-title">
+        <section class="site-title site-section">
           <div><span>Wahoo - The Board Game</span></div>
         </section>
-        <section class="site-content">
+        <section class="site-content site-section">
           <div><main-menu></main-menu></div>
         </section>
-        <section class="site-footer"></section>
       </div>
     `
     //document.addEventListener('DOMContentLoaded', () => { this.updateApp() })
   }
 
-  startgame(data) {
+  startgame() {
     const wahooGame = document.createElement('wahoo-game')
     const mainMenu = this.querySelector('section.site-content div')
     const siteContent = this.querySelector('section.site-content')
