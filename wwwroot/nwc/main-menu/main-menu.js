@@ -15,7 +15,6 @@
   }
 
   eventHandler(e) {
-    console.log('e: ', e)
     this.querySelector('.name-input-counter').textContent = e.value.length
   }
 

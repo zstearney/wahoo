@@ -31,6 +31,16 @@ main {
     width: 100%;
 }
 
+.interact {
+    pointer-events: all;
+    user-select: all;
+}
+
+.no-interact {
+    pointer-events: none;
+    user-select: none;
+}
+
 .purple-txt {
   color: #938bff;
 }

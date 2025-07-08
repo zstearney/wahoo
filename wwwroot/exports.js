@@ -7,6 +7,7 @@ import "./nwc/wahoo-game/wahoo-game.js";
 import "./nwc/wahoo-board/wahoo-board.js";
 import "./nwc/wahoo-board/wahoo-board-row.js";
 import "./nwc/wahoo-board/wahoo-board-cell.js";
+import "./nwc/wahoo-board/wahoo-board-marble.js";
 import "./nwc/wahoo-panel/wahoo-panel.js";
 import "./nwc/wahoo-panel/wahoo-panel-dice.js";
 import "./nwc/wahoo-panel/wahoo-panel-tracker.js";
