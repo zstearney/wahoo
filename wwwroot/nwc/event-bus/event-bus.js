@@ -3,7 +3,23 @@
     super();
   }
 
-  _gamedata = null;
+  _activeMarbleData;
+  _activeMarble;
+  _gamedata;
+
+  get activeMarble() {
+    const mc = this._activeMarbleData.color
+    const mn = this._activeMarbleData.marbleNum
+    return document.querySelector(`wahoo-board-marble[marble-color="${mc}"][marble-number="${mn}"]`)
+  }
+
+  get activeMarbleData() {
+    return this._activeMarbleData;
+  }
+
+  set activeMarbleData(value) {
+    this._activeMarbleData = value
+  }
 
   get gamedata() {
     return this._gamedata

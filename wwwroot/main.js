@@ -3,12 +3,6 @@
     super();
   }
 
-  _activeMarble;
-
-  get activeMarble() {
-    return this._activeMarble;
-  }
-
   get eventBus() {
     return document.querySelector('#event-bus')
   }
@@ -27,8 +21,8 @@
       this.startgame() 
     })
 
-    bus.addEventListener('send_active_marble', ({detail}) => { 
-      this._activeMarble = detail
+    bus.addEventListener('send_active_marble_data', ({detail}) => { 
+      this.eventBus.activeMarbleData = detail
     })
   }
 
