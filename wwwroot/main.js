@@ -3,6 +3,12 @@
     super();
   }
 
+  _activeMarble;
+
+  get activeMarble() {
+    return this._activeMarble;
+  }
+
   get eventBus() {
     return document.querySelector('#event-bus')
   }
@@ -19,6 +25,10 @@
     bus.addEventListener('send_start_game_event', ({detail}) => { 
       this.eventBus.gamedata = detail
       this.startgame() 
+    })
+
+    bus.addEventListener('send_active_marble', ({detail}) => { 
+      this._activeMarble = detail
     })
   }
 
@@ -40,7 +50,7 @@
         }
         #site .site-content {
           background: #24252a;
-          margin: 0 18px 18px 18px;
+          margin: 0 4px 4px 4px;
           top: 36px;
           bottom: 0;
           overflow: hidden;

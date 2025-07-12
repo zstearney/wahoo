@@ -14,12 +14,12 @@
     this.innerHTML = `
       <style>
         wahoo-panel-dice {
-          height: 100%;
           width: 100%;
         }
         #wahoo-panel-dice {
           display: flex;
           flex-direction: column;
+          width: 100%;
           height: 100%;
         }
         #wahoo-panel-dice div {
@@ -44,6 +44,7 @@
           transform: scale(0.7);
         }       
         .dice {
+          cursor: pointer;
           position: relative;
           width: 100px;
           height: 100px;

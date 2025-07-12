@@ -48,6 +48,7 @@
       </style>
       <div id="wahoo-board-marble" class="board-marble" color="${this.marbleColor}"></div>
     `
+    //this.querySelector('#wahoo-board-marble').addEventListener("ondragstart", () => { console.log('test'); })
     //document.addEventListener('DOMContentLoaded', () => { this.updateApp() })
   }
 }

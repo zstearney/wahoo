@@ -18,7 +18,6 @@
     this.innerHTML = `
       <style>
         #wahoo-game {
-          display: grid;
           height: 100%;
           width: 100%;
         }
@@ -28,11 +27,11 @@
           padding-bottom: 18px;
         }
         wahoo-panel {
-          height: 180px;
-          width: 100%;
+          height: 100%;
+          width: 340px;
         }
       </style>
-      <div id="wahoo-game">
+      <div id="wahoo-game" class="row">
         <wahoo-board></wahoo-board>
         <wahoo-panel></wahoo-panel>
       </div>
@@ -46,20 +45,20 @@
   updateGameComponentsSize() {
     const game = this.querySelector('#wahoo-game')
     const board = this.querySelector('wahoo-board')
-    const panel = this.querySelector('wahoo-panel')
+    //const panel = this.querySelector('wahoo-panel')
 
-    const gheight = game.offsetHeight
-    const bheight = gheight - 200
+    //const gheight = game.offsetHeight
+    const bheight = board.offsetHeight
     const bwidth = board.offsetWidth;
 
-    board.style.height = `${bheight}px`;
+    //board.style.height = `${bheight}px`;
 
     if (bheight > bwidth) {
-        board.style.height = `${bwidth}px`;
-        board.style.width = `${bwidth}px`;
+        //board.style.height = `${bwidth}px`;
+        //board.style.width = `${bwidth}px`;
     } else {
-        board.style.height = `${bheight}px`;
-        board.style.width = `${bheight}px`;
+        //board.style.height = `${bheight}px`;
+        //board.style.width = `${bheight}px`;
     }
 
 

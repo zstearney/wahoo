@@ -14,13 +14,13 @@
     this.innerHTML = `
       <style>
         wahoo-panel-tracker {
-          height: 100%;
           width: 100%;
         }
         #wahoo-panel-tracker {
           display: flex;
           flex-direction: column;
           height: 100%;
+          width: 100%;
         }
         #wahoo-panel-tracker div {
           display: flex;

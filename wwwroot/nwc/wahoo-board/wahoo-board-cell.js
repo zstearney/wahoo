@@ -3,6 +3,10 @@
     super();
   }
 
+  get eventBus() {
+    return document.querySelector('#event-bus')
+  }
+
   get rowNum() {
     return this.getAttribute('rn')
   }
@@ -42,8 +46,12 @@
   dragHandler(e) {
     //console.log('e: ', e)
     switch (e.type) {
-      case 'ondragstart': 
+      case 'dragstart': 
         console.log('ondragstart: ', e)
+        console.log('ondragstart: ', e.target.getAttribute('marble-color'))
+        const marbleData = { color: e.target.getAttribute('marble-color'), marbleNum: e.target.getAttribute('marble-number') };
+        this.eventBus.dispatchEvent(new CustomEvent("send_active_marble", { detail: marbleData } ));
+
         e.dataTransfer.setData("text", e.target.id)
         break;
       case 'dragenter':
@@ -59,7 +67,9 @@
       case 'drop':
         e.preventDefault();
         console.log('drop: ', e)
-        //console.log('yep: ', e.dataTransfer.files[0])
+        const dropMarbleData = document.querySelector('main-site').activeMarble
+        const dropMarble = document.querySelector(`wahoo-board-marble[marble-color="${dropMarbleData.color}"][marble-number="${dropMarbleData.marbleNum}"]`)
+        e.target.querySelector('.cell-circle').appendChild(dropMarble)
         this.removeAttribute('drag-hover')
         break;
     }
@@ -134,7 +144,7 @@
     marble.setAttribute('marble-number', `${number}`)
     marble.setAttribute('draggable', 'true')
 
-    marble.addEventListener("ondragstart", (event) => { console.log('start'); this.dragHandler(event) })
+    marble.addEventListener("dragstart", (event) => { console.log('start'); this.dragHandler(event) })
 
     this.querySelector('.cell-circle').appendChild(marble);
   }

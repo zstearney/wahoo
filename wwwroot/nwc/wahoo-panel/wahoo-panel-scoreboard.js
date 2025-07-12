@@ -14,13 +14,13 @@
     this.innerHTML = `
       <style>
         wahoo-panel-scoreboard {
-          height: 100%;
           width: 100%;
         }
         #wahoo-panel-scoreboard {
           display: flex;
           flex-direction: column;
           height: 100%;
+          width: 100%;
         }
         wahoo-panel-scoreboard section {
           background: black;
@@ -32,7 +32,9 @@
         }
         wahoo-panel-scoreboard .scoreboard-title {
           color: #938bff;
-          text-align: center;
+          display: flex;
+          align-items: center;
+          justify-content: center;
           height: 100%;
         }
         wahoo-panel-scoreboard .scoreboard-blue {
