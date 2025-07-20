@@ -41,6 +41,22 @@ main {
     user-select: none;
 }
 
+  .purple-bg {
+    background: #938bff;
+  }
+  [bg="blue"] {
+    background: #589eff;
+  }
+  [bg="red"] {
+    background: #ff6e76;
+  }
+  [bg="green"] {
+    background: #00c8a1;
+  }
+  [bg="yellow"] {
+    background: #d69605;
+  }
+
 .purple-txt {
   color: #938bff;
 }

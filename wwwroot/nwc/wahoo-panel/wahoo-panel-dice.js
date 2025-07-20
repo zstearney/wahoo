@@ -29,8 +29,8 @@
           align-items: center;
         }
         #wahoo-panel-dice .dice-title {
-          color: #938bff;
-          height: 20%;
+          background: #938bff;
+          height: 40px;
         }
         #wahoo-panel-dice .dice {
           

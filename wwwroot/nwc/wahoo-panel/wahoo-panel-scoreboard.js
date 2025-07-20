@@ -27,15 +27,14 @@
           display: flex;
           align-items: center;
           justify-content: space-between;
-          padding: 0 16px;
-          height: 100%;
+          padding: 4px 16px;
         }
         wahoo-panel-scoreboard .scoreboard-title {
-          color: #938bff;
+          background: #938bff;
           display: flex;
           align-items: center;
           justify-content: center;
-          height: 100%;
+          height: 40px;
         }
         wahoo-panel-scoreboard .scoreboard-blue {
           color: #589eff;
@@ -52,13 +51,13 @@
       </style>
       <div id="wahoo-panel-scoreboard">
         <div class="scoreboard-title">Scoreboard</div>
-        <section class="scoreboard-blue">
-            <div class="scoreboard-score">0</div>
-            <div class="scoreboard-color">Blue</div>
-        </section>
         <section class="scoreboard-red">
             <div class="scoreboard-score">0</div>
             <div class="scoreboard-color">Red</div>
+        </section>
+        <section class="scoreboard-blue">
+            <div class="scoreboard-score">0</div>
+            <div class="scoreboard-color">Blue</div>
         </section>
         <section class="scoreboard-green">
             <div class="scoreboard-score">0</div>

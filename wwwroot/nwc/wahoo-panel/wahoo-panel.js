@@ -35,15 +35,6 @@
           height: 30%;
           width: 100%;
         }
-        wahoo-panel-tracker {
-          height: 25%;
-        }
-        wahoo-panel-dice {
-          height: 25%;
-        }
-        wahoo-panel-scoreboard {
-          height: 40%;
-        }
       </style>
       <div id="wahoo-panel">
         <section class="panel-top ${this.eventBus.gamedata.playerColor}-txt">${this.eventBus.gamedata.playerName} - team ${this.eventBus.gamedata.playerColor}</section>

@@ -22,6 +22,7 @@
     })
 
     bus.addEventListener('send_active_marble_data', ({detail}) => { 
+      console.log('test send event turn: ', detail)
       this.eventBus.activeMarbleData = detail
     })
   }

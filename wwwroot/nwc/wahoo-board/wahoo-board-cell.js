@@ -69,6 +69,7 @@
         const dropMarble = this.eventBus.activeMarble
         e.target.querySelector('.cell-circle').appendChild(dropMarble)
         this.removeAttribute('drag-hover')
+        //this.eventBus.dispatchEvent(new CustomEvent("send_new_turn_event"));
         break;
     }
   }

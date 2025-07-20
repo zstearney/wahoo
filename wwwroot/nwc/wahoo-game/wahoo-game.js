@@ -1,7 +1,11 @@
+ import { GameLogic } from "../game-logic/game-logic.js";
+ 
  class WahooGame extends HTMLElement {
   constructor() {
     super();
   }
+
+  _GameLogic;
 
   get eventBus() {
     return document.querySelector('#event-bus')
@@ -9,9 +13,19 @@
 
   connectedCallback() {
     this.render()
+    this._GameLogic = new GameLogic()
+    setTimeout(() => { this.initGame() })
   }
 
   disconnectedCallback() {
+  }
+
+  initGame() {
+    console.log('initGame: ')
+    this._GameLogic.initGameTurn()
+    const activeTurn = this._GameLogic.activeTurn
+    //console.log('activeTurn: ', activeTurn)
+    this.eventBus.dispatchEvent(new CustomEvent("send_new_turn_event", { detail: activeTurn } ));
   }
 
   render() {
@@ -21,14 +35,18 @@
           height: 100%;
           width: 100%;
         }
-        wahoo-board {
+        #wahoo-game wahoo-board {
           height: 100%;
           width: 100%;
           padding-bottom: 18px;
         }
-        wahoo-panel {
+        #wahoo-game wahoo-panel {
           height: 100%;
           width: 340px;
+        }
+        wahoo-game[turn="blue"] :not(wahoo-board-marble[color="blue"]) {
+          pointer-events: none;
+          user-select: none;
         }
       </style>
       <div id="wahoo-game" class="row">
@@ -37,7 +55,8 @@
       </div>
     `
     
-    document.addEventListener('DOMContentLoaded', () => { this.updateApp() })
+    //this.addEventListener('send_new_turn_event', () => { this.initTurn(); })
+    //this.addEventListener('DOMContentLoaded', () => { this.initGame() })
     window.addEventListener('resize', () => { this.updateGameComponentsSize() })
     this.updateGameComponentsSize()
   }
